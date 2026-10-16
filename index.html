@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SenxSelle Coffee Shop | Bantay, Ilocos Sur</title>
+  <meta name="description" content="SenxSelle Coffee Shop: freshly brewed coffee, fruit teas, pastries, pasta, snacks and salads in Bantay, Ilocos Sur.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="#home" class="logo">SenxSelle.</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#visit">Contact</a>
+    </nav>
+    <button class="cart-btn" id="openCart" aria-label="Open your order">
+      Order <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h1>Your Daily Dose of Happiness.</h1>
+        <p>Coffee, comfort, and good moments, all in one place.</p>
+        <a href="#menu" class="btn">Explore our menu</a>
+      </div>
+      <!-- script.js fills this with a drawing, then your photo images/hero.jpg on top -->
+      <div class="hero-art" id="heroArt"></div>
+    </section>
+
+    <section class="menu" id="menu">
+      <div class="section-head">
+        <h2>Our Menu</h2>
+        <p>Prices in Philippine pesos (₱). Tap Add to build your order.</p>
+      </div>
+      <div class="tabs" id="tabs" role="tablist" aria-label="Menu categories"></div>
+      <p class="cat-desc" id="catDesc"></p>
+      <div class="grid" id="menuGrid"></div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-inner">
+        <h2>About SenxSelle Coffee Shop</h2>
+        <p>SenxSelle Coffee Shop is a cozy and welcoming café where customers can enjoy freshly prepared coffee, refreshing fruit teas, delicious pastries, pasta, snacks, and fresh salads. It is a perfect place for students, friends, families, and coffee lovers to relax, study, work, or spend quality time together.</p>
+        <p>Our goal is to provide delicious food and drinks, friendly service, and an affordable café experience for everyone.</p>
+      </div>
+    </section>
+
+    <section class="visit" id="visit">
+      <div class="visit-card">
+        <h2>Visit SenxSelle Coffee Shop</h2>
+        <p>Barangay 5, Bantay, Ilocos Sur</p>
+        <p>Contact: <a href="tel:093574141">093574141</a></p>
+        <a class="btn btn-light" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Barangay+5+Bantay+Ilocos+Sur">Open in Maps</a>
+        <p class="tagline">Sip, Relax, and Enjoy Every Moment.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">© <span id="year"></span> SenxSelle Coffee Shop. Barangay 5, Bantay, Ilocos Sur.</footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-label="Your order" aria-hidden="true">
+    <div class="drawer-head">
+      <h3>Your Order</h3>
+      <button class="close" id="closeCart" aria-label="Close order">&times;</button>
+    </div>
+    <div class="drawer-body" id="cartItems"></div>
+    <div class="drawer-foot">
+      <div class="total-row"><span>Total</span><strong id="cartTotal">₱0</strong></div>
+      <label for="custName">Your name</label>
+      <input id="custName" type="text" placeholder="e.g. Maria" autocomplete="name">
+      <label for="custNote">Note (table number, pickup time, etc.)</label>
+      <input id="custNote" type="text" placeholder="Optional">
+      <div class="actions">
+        <button class="btn" id="sendOrder">Send order by text</button>
+        <button class="btn btn-ghost" id="copyOrder">Copy order</button>
+        <button class="link-btn" id="clearCart">Clear order</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
